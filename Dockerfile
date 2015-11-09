@@ -1,5 +1,7 @@
 FROM ubuntu
 
+MAINTAINER Nitin Agnihotri <nitin124@webkul.com>
+
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y update
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install lamp-server^
