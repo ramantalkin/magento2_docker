@@ -21,3 +21,5 @@ after that run the command
 "docker logs container_id"
 
 in that logs you will get the mysql username and password to connect with the database.
+
+To access the database of your magento2 got to the URL http://localhost/magento2/adminer.php and login with the credentials provided in the logs.
