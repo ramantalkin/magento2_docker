@@ -2,11 +2,11 @@
 
 Pull Image from DockerHub :-
 
-"docker pull webkul/magento2_docker:master"
+"docker pull ramantalkin/magento2_docker:master"
 
 Run your container by following command :-
 
-"docker run -d -p 80:80 -p 3306:3306 webkul/magento2_docker:master"
+"docker run -d -p 80:80 -p 3306:3306 ramantalkin/magento2_docker:master"
 
 Note-: No other services should be running on port 80 and 3306 of your host system. If so, change ports in the above docker command.
 
