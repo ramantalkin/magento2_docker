@@ -1,6 +1,6 @@
 FROM ubuntu
 
-MAINTAINER Nitin Agnihotri <nitin124@webkul.com>
+MAINTAINER Raman Deep Singh <ramantalkin@gmail.com>
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y update
 
@@ -17,9 +17,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install unzip pwgen
 RUN DEBIAN_FRONTEND=noninteractive sudo apt-get -y install mcrypt php5-mcrypt curl php5-curl php5-gd
 
 RUN DEBIAN_FRONTEND=noninteractive php5enmod mcrypt
-RUN cd /var/www/html/ && wget https://github.com/magento/magento2/archive/develop.zip
-RUN cd /var/www/html/ && unzip develop.zip
-RUN mv /var/www/html/magento2-develop /var/www/html/magento2
+RUN cd /var/www/html/ && wget https://github.com/magento/magento2/archive/2.3.4.zip
+RUN cd /var/www/html/ && unzip 2.3.4.zip
+RUN mv /var/www/html/magento2-develop /var/www/html/
 RUN wget -O /usr/local/bin/composer http://getcomposer.org/composer.phar
 RUN chmod +x /usr/local/bin/composer
 RUN a2enmod rewrite
