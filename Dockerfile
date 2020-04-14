@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:latest
 
 MAINTAINER Raman Deep Singh <ramantalkin@gmail.com>
 
