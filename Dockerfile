@@ -1,21 +1,12 @@
 FROM ubuntu:latest
-
 MAINTAINER Raman Deep Singh <ramantalkin@gmail.com>
-
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y update
-
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install lamp-server^
-
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-server-5.6
-
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install php5-intl php5-xsl
-
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install wget supervisor git
-
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install unzip pwgen
-
 RUN DEBIAN_FRONTEND=noninteractive sudo apt-get -y install mcrypt php5-mcrypt curl php5-curl php5-gd
-
 RUN DEBIAN_FRONTEND=noninteractive php5enmod mcrypt
 RUN cd /var/www/html/ && wget https://github.com/magento/magento2/archive/2.3.4.zip
 RUN cd /var/www/html/ && unzip 2.3.4.zip
@@ -36,14 +27,9 @@ RUN chmod 755 /*.sh
 RUN rm -rf /var/lib/mysql/*
 
 EXPOSE 80
-
 EXPOSE 3306
 
-
 RUN cd /var/www/html && chown -R www-data:www-data magento2 
-
 ADD startupscript.sh /var/www/startupscript.sh
-
 RUN chmod 755 /var/www/*.sh
-
 CMD ["/var/www/startupscript.sh"]
